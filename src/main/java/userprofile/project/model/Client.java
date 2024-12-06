@@ -10,35 +10,31 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private int userID;
 
-    @Column(name = "f_name")
+    @Column(name = "firstName")
     private String fName;
 
-    @Column(name = "l_name")
+    @Column(name = "lastName")
     private String lName;
 
-    @Column(name = "acc_username", unique = true, nullable = false)
+    @Column(name = "midName")
+    private String midName;
+
+    @Column(name = "accUsername")
     private String accUsername;
 
-    @Column(name = "acc_pass", nullable = false)
+    @Column(name = "accPass", nullable = false)
     private String accPass;
 
     @Lob
-    @Column(name = "user_pic")
+    @Column(name = "userPic")
     private Blob userPic;
 
-    @Column(name = "acc_date_creation")
+    @Column(name = "accDateCreation")
     @Temporal(TemporalType.TIMESTAMP)
     private Date accDateCreation;
 
-    public int getId() {
-        return userId;
-    }
-
-    public void setId(int id) {
-        this.userId = id;
-    }
 
     public String getfName() {
         return fName;
@@ -76,6 +72,11 @@ public class Client {
         return userPic;
     }
 
+
+    public void setUserPic(Blob userPic) {
+        this.userPic = userPic;
+    }
+
     public Date getAccDateCreation() {
         return accDateCreation;
     }
@@ -84,10 +85,24 @@ public class Client {
         this.accDateCreation = accDateCreation;
     }
 
-    public void setUserPic(Blob userPic) {
-        this.userPic = userPic;
-
-
+    public int getUserID() {
+        return userID;
     }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getMidName() {
+        return midName;
+    }
+
+    public void setMidName(String midName) {
+        this.midName = midName;
+    }
+
+
+
+
 }
 
